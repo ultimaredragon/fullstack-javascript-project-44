@@ -13,13 +13,13 @@ function isDivisibleByTwo() {
 
     // Проверить ответ пользователя
     if (answer.toLowerCase() === 'yes' && randomNumber % 2 === 0) {
-      correctAnswers++;
+      correctAnswers += 1;
       console.log('Правильный ответ!');
     } else if (answer.toLowerCase() === 'no' && randomNumber % 2 !== 0) {
-      correctAnswers++;
+      correctAnswers += 1;
       console.log('Правильный ответ!');
     } else {
-      wrongAnswers++;
+      wrongAnswers += 1;
       console.log('Неправильный ответ!');
     }
   }
