@@ -41,10 +41,10 @@ function performRandomOperation() {
 
     let answer = readlineSync.question(`Решите задачу: ${expression} = `);
     if (parseInt(answer) === result) {
-      correctAnswers++;
+      correctAnswers += 1;
       console.log('Правильный ответ!');
     } else {
-      wrongAnswers++;
+      wrongAnswers += 1;
       console.log('Неправильный ответ!');
     }
   }
