@@ -19,24 +19,22 @@ function playGCD() {
   let wrongAnswers = 0;
 
   while (correctAnswers < 3 && wrongAnswers < 3) {
-    let num1 = getRandomNumber(1, 100);
-    let num2 = getRandomNumber(1, 100);
+    const num1 = getRandomNumber(1, 100);
+    const num2 = getRandomNumber(1, 100);
 
-    console.log("Какой наибольший делитель у следующих двух чисел?", num1, num2);
+    console.log('Какой наибольший делитель у следующих двух чисел?', num1, num2);
 
     const userAnswer = parseInt(readlineSync.question('Введите наибольший общий делитель: '));
 
     const result = gcd(num1, num2);
 
     if (parseInt(userAnswer) === result) {
-      console.log("Правильно!");
+      console.log('Правильно!');
       correctAnswers += 1;
     } else {
-      console.log("Неправильно!");
+      console.log('Неправильно!');
       wrongAnswers += 1;
     }
-
-    console.log("-------------------");
   }
 
   if (correctAnswers === 3) {
