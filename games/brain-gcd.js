@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { getRandomNumber } from '../src/index.js';
 
 function gcd(a, b) {
   if (b === 0) {
@@ -17,30 +14,31 @@ function gcd(a, b) {
 function playGCD() {
   let correctAnswers = 0;
   let wrongAnswers = 0;
+  console.log('Find the greatest common divisor of given numbers.');
 
   while (correctAnswers < 3 && wrongAnswers < 3) {
     const num1 = getRandomNumber(1, 100);
     const num2 = getRandomNumber(1, 100);
 
-    console.log('Какой наибольший делитель у следующих двух чисел?', num1, num2);
+    console.log('Question: ', num1, num2);
 
-    const userAnswer = parseInt(readlineSync.question('Введите наибольший общий делитель: '));
+    const userAnswer = parseInt(readlineSync.question('Your answer: '));
 
     const result = gcd(num1, num2);
 
     if (parseInt(userAnswer) === result) {
-      console.log('Правильно!');
+      console.log('Correct!');
       correctAnswers += 1;
     } else {
-      console.log('Неправильно!');
+      console.log(`\'${userAnswer}\' is wrong answer ;(. Correct answer was \'${result}\'`);
       wrongAnswers += 1;
     }
   }
 
   if (correctAnswers === 3) {
-    console.log('Поздравляю! Вы дали три правильных ответа! Двигаемся дальше!');
+    console.log('Congratulations!');
   } else {
-    console.log('Вы дали три неправильных ответа. Игра окончена!');
+    console.log('Let\'s try again!');
   }
 }
 

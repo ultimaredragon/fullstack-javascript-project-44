@@ -18,10 +18,12 @@ function isPrime(number) {
 function brainPrime() {
   let correctAnswers = 0;
   let wrongAnswers = 0;
+  console.log('Answer "yes" if the number is prime, otherwise answer "no"');
 
   while (correctAnswers < 3 && wrongAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    const userAnswer = readlineSync.question(`Простое ли число ${randomNumber}? (Введите "yes" или "no") `);
+    console.log('Question: ', randomNumber);
+    const userAnswer = readlineSync.question(`Your answer: `);
 
     const isPrimeNumber = isPrime(randomNumber);
     const isCorrectAnswer = (isPrimeNumber && userAnswer.toLowerCase() === 'yes')
@@ -29,17 +31,17 @@ function brainPrime() {
 
     if (isCorrectAnswer) {
       correctAnswers += 1;
-      console.log('Правильный ответ!');
+      console.log('Correct!');
     } else {
       wrongAnswers += 1;
-      console.log('Неправильный ответ!');
+      console.log('Wrong! The answer was \'yes\'');
     }
   }
 
   if (correctAnswers === 3) {
-    console.log('Поздравляю! Вы дали три правильных ответа! Двигаемся дальше!');
+    console.log('Congratulations!');
   } else {
-    console.log('Вы дали три неправильных ответа. Игра окончена!');
+    console.log('Let\'s try again!');
   }
 }
 

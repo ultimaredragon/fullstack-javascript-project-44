@@ -1,10 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import { getRandomNumber } from '../src/index.js';
 
 // Функция для генерации арифметической прогрессии
 function generateArithmeticProgression(length) {
@@ -28,30 +25,31 @@ function generateArithmeticProgression(length) {
 function startGame() {
   let correctAnswers = 0;
   let wrongAnswers = 0;
+  console.log('What number is missing in the progression?');
+
   while (correctAnswers < 3 && wrongAnswers < 3) {
     const length = getRandomNumber(5, 10); // Генерируем случайную длину прогрессии от 5 до 10
     const { progression, hiddenNumber, hiddenIndex } = generateArithmeticProgression(length);
 
-    console.log('Найдите скрытое число в арифметической прогрессии:');
-    console.log(progression.join(', '));
+    console.log('Question: ' + progression.join(', '));
 
     // Получаем ответ от игрока
-    const answer = readlineSync.question('Введите ваш ответ: ');
+    const answer = readlineSync.question('Your answer: ');
 
     // Проверяем ответ игрока
     if (parseInt(answer) === hiddenNumber) {
-      console.log('Правильный ответ!');
+      console.log('Corect!');
       correctAnswers += 1;
     } else {
-      console.log(`К сожалению, неправильно. Правильный ответ: ${hiddenNumber}`);
+      console.log(`\'${answer}\' is wrong answer ;(. Correct answer was \'${hiddenNumber}\'`);
       wrongAnswers += 1;
     }
   }
 
   if (correctAnswers === 3) {
-    console.log('Поздравляю! Вы дали три правильных ответа! Двигаемся дальше!');
+    console.log('Congratulations!');
   } else {
-    console.log('Вы дали три неправильных ответа. Игра окончена!');
+    console.log('Let\'s try again!');
   }
 }
 
