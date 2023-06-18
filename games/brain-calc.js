@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-import { getRandomNumber } from '../src/index.js';
+import getRandomNumber from '../src/index.js';
 
 function generateRandomOperator() {
   const operators = ['+', '-', '*'];
@@ -37,12 +37,12 @@ function performRandomOperation() {
         break;
     }
     const answer = readlineSync.question(`Question: ${expression} = `);
-    if (parseInt(answer) === result) {
+    if (parseInt(answer, 10) === result) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
       wrongAnswers += 1;
-      console.log(`\'${answer}\' is wrong answer ;(. Correct answer was \'${result}\'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
     }
   }
 

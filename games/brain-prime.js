@@ -23,7 +23,7 @@ function brainPrime() {
   while (correctAnswers < 3 && wrongAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log('Question: ', randomNumber);
-    const userAnswer = readlineSync.question(`Your answer: `);
+    const userAnswer = readlineSync.question('Your answer: ');
 
     const isPrimeNumber = isPrime(randomNumber);
     const isCorrectAnswer = (isPrimeNumber && userAnswer.toLowerCase() === 'yes')
