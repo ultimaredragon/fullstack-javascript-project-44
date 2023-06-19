@@ -31,9 +31,9 @@ function isDivisibleByTwo() {
       console.log('"no" is wrong answer ;(. Correct answer was "Yes".');
       console.log(`Let's try again, ${user}!`);
       return false;
-    };
-  };
-  
+    }
+  }
+
   console.log(`Congratulations, ${user}!`);
   return true;
 }

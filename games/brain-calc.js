@@ -13,10 +13,9 @@ function generateRandomOperator() {
 
 function performRandomOperation() {
   let correctAnswers = 0;
-  let wrongAnswers = 0;
   console.log('What is the result of the expression?');
 
-  while (correctAnswers < 3 && wrongAnswers < 3) {
+  while (correctAnswers < 3) {
     const number1 = getRandomNumber(1, 100);
     const number2 = getRandomNumber(1, 100);
     const operator = generateRandomOperator();
@@ -38,21 +37,21 @@ function performRandomOperation() {
         expression = `${number1} * ${number2}`;
         break;
     }
+
     const answer = readlineSync.question(`Question: ${expression} = `);
+
     if (parseInt(answer, 10) === result) {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      wrongAnswers += 1;
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
+      console.log(`Let's try again, ${user}!`);
+      return false;
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${user}!`);
-  } else {
-    console.log(`Let's try again, ${user}!`);
-  }
+  console.log(`Congratulations, ${user}!`);
+  return true;
 }
 
 performRandomOperation();
