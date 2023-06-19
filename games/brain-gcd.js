@@ -14,14 +14,14 @@ function gcd(a, b) {
 
 function playGCD() {
   let correctAnswers = 0;
-  let wrongAnswers = 0;
+
   console.log('Find the greatest common divisor of given numbers.');
 
-  while (correctAnswers < 3 && wrongAnswers < 3) {
+  while (correctAnswers < 3) {
     const num1 = getRandomNumber(1, 100);
     const num2 = getRandomNumber(1, 100);
 
-    console.log('Question: ', num1, num2);
+    console.log(`Question: ${num1}, ${num2}`);
 
     const userAnswer = parseInt(readlineSync.question('Your answer: '), 10);
 
@@ -32,15 +32,13 @@ function playGCD() {
       correctAnswers += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'`);
-      wrongAnswers += 1;
+      console.log(`Let's try again, ${user}!`);
+      return false;
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${user}!`);
-  } else {
-    console.log(`Let's try again, ${user}!`);
-  }
+  console.log(`Congratulations, ${user}!`);
+  return true;
 }
 
 playGCD();
