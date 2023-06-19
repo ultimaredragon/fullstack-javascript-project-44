@@ -23,18 +23,24 @@ function isDivisibleByTwo() {
     } else if (answer.toLowerCase() === 'no' && randomNumber % 2 !== 0) {
       correctAnswers += 1;
       console.log('Correct!');
-    } else {
+    } else if (answer.toLowerCase() === 'yes' && randomNumber % 2 !== 0) {
       wrongAnswers += 1;
-      console.log('"yes" is wrong answer ;(. Correct answer was "No".');
+      console.log('"yes" is wrong answer ;(. Correct answer was "No".')
+    } else if (answer.toLowerCase() === 'no' && randomNumber % 2 === 0) {
+      wrongAnswers += 1;
+      console.log('"no" is wrong answer ;(. Correct answer was "Yes".')
+    } else {
+      console.log('Incorrect input. Please enter "yes" or "no".');
     }
-  }
+  };
 
   if (correctAnswers === 3) {
     console.log(`Congratulations, ${user}!`);
     return true;
-  }
-  console.log(`Let's try again, ${user}!`);
-  return false;
+  } else {
+    console.log(`Let's try again, ${user}!`);
+    return false;
+  };
 }
 
 isDivisibleByTwo();
