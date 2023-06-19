@@ -2,6 +2,8 @@
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
 
+const user = greeting();
+
 function isDivisibleByTwo() {
   let correctAnswers = 0;
   let wrongAnswers = 0;
@@ -28,10 +30,10 @@ function isDivisibleByTwo() {
   }
 
   if (correctAnswers === 3) {
-    console.log('Congratulations!');
+    console.log(`Congratulations, ${user}!`);
     return true;
   }
-  console.log('Let\'s try again!');
+  console.log(`Let's try again, ${user}!`);
   return false;
 }
 

@@ -2,6 +2,8 @@
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
 
+const user = greeting();
+
 function isPrime(number) {
   if (number < 2) {
     return false;
@@ -34,14 +36,14 @@ function brainPrime() {
       console.log('Correct!');
     } else {
       wrongAnswers += 1;
-      console.log('Wrong! The answer was \'yes\'');
+      console.log('Wrong!');
     }
   }
 
   if (correctAnswers === 3) {
-    console.log('Congratulations!');
+    console.log(`Congratulations, ${user}!`);
   } else {
-    console.log('Let\'s try again!');
+    console.log(`Let's try again, ${user}!`);
   }
 }
 

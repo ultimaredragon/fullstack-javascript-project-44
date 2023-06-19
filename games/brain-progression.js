@@ -3,6 +3,8 @@ import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
 import getRandomNumber from '../src/index.js';
 
+const user = greeting();
+
 // Функция для генерации арифметической прогрессии
 function generateArithmeticProgression(length) {
   const progression = [];
@@ -47,9 +49,9 @@ function startGame() {
   }
 
   if (correctAnswers === 3) {
-    console.log('Congratulations!');
+    console.log(`Congratulations, ${user}!`);
   } else {
-    console.log('Let\'s try again!');
+    console.log(`Let's try again, ${user}!`);
   }
 }
 
