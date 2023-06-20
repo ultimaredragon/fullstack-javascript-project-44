@@ -33,7 +33,7 @@ function startGame() {
     const length = getRandomNumber(5, 10); // Генерируем случайную длину прогрессии от 5 до 10
     const { progression, hiddenNumber, hiddenIndex } = generateArithmeticProgression(length);
 
-    console.log(`Question: ${progression.join(', ')}`);
+    console.log(`Question: ${progression.join(' ')}`);
 
     // Получаем ответ от игрока
     const answer = readlineSync.question('Your answer: ');
