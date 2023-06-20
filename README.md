@@ -10,7 +10,7 @@ This is a first project on Hexlet's platform, which contains pack of little game
 - Brain Prime - A game in which a random number is generated and the user needs to determine whether this number is simple or not;
 - Brain Arifmetic A game in which a random arithmetic progression is generated with one missing number. The user needs to identify this missing number.
 
-Each of the games has an intuitive interface where the user is consistently asked questions that need to be answered. In each game, you need to give three correct answers - if the user answers correctly, then the game ends with congratulations. If the user gives three incorrect answers, the game ends and the user is asked to try to complete the game again.
+Each of the games has an intuitive interface where the user is consistently asked questions that need to be answered. In each game, you need to give three correct answers - if the user answers correctly, then the game ends with congratulations. If the user gives incorrect answer, the game ends and the user is asked to try to complete the game again.
 
 ## Getting started
 - Clone the repository
@@ -28,23 +28,14 @@ make link
 ```
 
 ## Usage
-```cmd
-[...@fedora fullstack-javascript-project-4]$ page-loader -h
-Usage: page-loader [options] <link>
-
-Downloads the page from the web and puts it in the specified directory
-
-Options:
-  -V, --version        output the version number
-  -o, --output [path]  output path (default: "/...")
-  -h, --help           display help for command
-```
-```cmd
-page-loader -o page-loader https://page-loader.hexlet.repl.co
-```
-### or (the current directory will be selected)
-```cmd
-page-loader https://page-loader.hexlet.repl.co
-```
+### Brain Calc
+A game in which a random operation is selected ("+", "-", "*") and two random numbers are generated. A numerical answer is needed.
+1. First of all, the program asks for the user name. Enter the user name.
+![Brain-Calc username enter](https://i.imgur.com/l0fHJvn.png)
+2. In the next step, the user will be shown a mathematical expression to which the user needs to give an answer. If the user answers correctly, the following expression will be displayed on the screen.
+![Brain-Calc right answer](https://i.imgur.com/TJtzKWW.png)
+3. If the user gives an incorrect answer, a corresponding message will appear on the screen and the game will end with an offer to try next time.
+![Brain-Calc wrong answer](https://i.imgur.com/Q9biMqX.png)
+4. The game will end successfully if the user gives three correct answers in a row. Congratulations, you are irresistible!
+![Brain-Calc three right answers in a row](https://i.imgur.com/lnNEK0G.png)
 ## Example
-[![asciicast](https://asciinema.org/a/kLRy5gv04bG9ogHH8u84uAiXU.svg)](https://asciinema.org/a/kLRy5gv04bG9ogHH8u84uAiXU)
