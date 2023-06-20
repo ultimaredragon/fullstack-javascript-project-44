@@ -20,7 +20,7 @@ function generateArithmeticProgression(length) {
   const hiddenNumber = progression[hiddenIndex]; // Запоминаем скрытое число
   progression[hiddenIndex] = '..'; // Заменяем скрытое число двумя точками
 
-  return { progression, hiddenNumber, hiddenIndex };
+  return { progression, hiddenNumber };
 }
 
 // Функция для запуска игры
@@ -30,7 +30,7 @@ function startGame() {
 
   while (correctAnswers < 3) {
     const length = getRandomNumber(5, 10); // Генерируем случайную длину прогрессии от 5 до 10
-    const { progression, hiddenNumber, hiddenIndex } = generateArithmeticProgression(length);
+    const { progression, hiddenNumber } = generateArithmeticProgression(length);
 
     console.log(`Question: ${progression.join(' ')}`);
 
