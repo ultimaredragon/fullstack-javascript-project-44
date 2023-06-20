@@ -36,6 +36,8 @@ function performRandomOperation() {
         result = number1 * number2;
         expression = `${number1} * ${number2}`;
         break;
+      default:
+        break;
     }
 
     const answer = readlineSync.question(`Question: ${expression} = `);
