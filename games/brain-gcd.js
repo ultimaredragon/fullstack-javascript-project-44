@@ -21,7 +21,7 @@ function playGCD() {
     const number1 = getRandomNumber(1, 100);
     const number2 = getRandomNumber(1, 100);
 
-    console.log(`Question: ${number1}, ${number2}`);
+    console.log(`Question: ${number1} ${number2}`);
 
     const userAnswer = parseInt(readlineSync.question('Your answer: '), 10);
 
