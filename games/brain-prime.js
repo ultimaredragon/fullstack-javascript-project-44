@@ -19,7 +19,7 @@ function isPrime(number) {
 
 function brainPrime() {
   let correctAnswers = 0;
-  console.log('Answer "yes" if the number is prime, otherwise answer "no"');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no". ');
 
   while (correctAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
