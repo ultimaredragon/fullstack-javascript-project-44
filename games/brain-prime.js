@@ -19,12 +19,11 @@ function isPrime(number) {
 
 function brainPrime() {
   let correctAnswers = 0;
-  let wrongAnswers = 0;
   console.log('Answer "yes" if the number is prime, otherwise answer "no"');
 
-  while (correctAnswers < 3 && wrongAnswers < 3) {
+  while (correctAnswers < 3) {
     const randomNumber = Math.floor(Math.random() * 100) + 1;
-    console.log('Question: ', randomNumber);
+    console.log(`Question:', ${randomNumber}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     const isPrimeNumber = isPrime(randomNumber);
@@ -35,16 +34,14 @@ function brainPrime() {
       correctAnswers += 1;
       console.log('Correct!');
     } else {
-      wrongAnswers += 1;
       console.log('Wrong!');
+      console.log(`Let's try again, ${user}!`);
+      return false;
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${user}!`);
-  } else {
-    console.log(`Let's try again, ${user}!`);
-  }
+  console.log(`Congratulations, ${user}!`);
+  return true;
 }
 
 brainPrime();
