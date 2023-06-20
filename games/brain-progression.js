@@ -26,10 +26,9 @@ function generateArithmeticProgression(length) {
 // Функция для запуска игры
 function startGame() {
   let correctAnswers = 0;
-  let wrongAnswers = 0;
   console.log('What number is missing in the progression?');
 
-  while (correctAnswers < 3 && wrongAnswers < 3) {
+  while (correctAnswers < 3) {
     const length = getRandomNumber(5, 10); // Генерируем случайную длину прогрессии от 5 до 10
     const { progression, hiddenNumber, hiddenIndex } = generateArithmeticProgression(length);
 
@@ -44,15 +43,13 @@ function startGame() {
       correctAnswers += 1;
     } else {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${hiddenNumber}'`);
-      wrongAnswers += 1;
+      console.log(`Let's try again, ${user}!`);
+      return false;
     }
   }
 
-  if (correctAnswers === 3) {
-    console.log(`Congratulations, ${user}!`);
-  } else {
-    console.log(`Let's try again, ${user}!`);
-  }
+  console.log(`Congratulations, ${user}!`);
+  return true;
 }
 
 startGame();
