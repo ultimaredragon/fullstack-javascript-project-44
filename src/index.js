@@ -21,7 +21,7 @@ function runEngine(rules, makeRound) {
     }
   }
 
-  console.log(`Congratulations, ${user}`);
+  console.log(`Congratulations, ${user}!`);
 }
 
 export default runEngine;
