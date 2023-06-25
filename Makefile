@@ -7,19 +7,19 @@ brain-games:
 	node bin/brain-games.js
 
 brain-even:
-	node games/brain-even.js
+	node src/games/brain-even.js
 
 brain-calc:
-	node games/brain-calc.js
+	node src/games/brain-calc.js
 
 brain-gcd:
-	node games/brain-gcd.js
+	node src/games/brain-gcd.js
 
 brain-progression:
-	node games/brain-progression.js
+	node src/games/brain-progression.js
 
 brain-prime:
-	node games/brain-prime.js
+	node src/games/brain-prime.js
 
 publish:
 	npm publish --dry-run

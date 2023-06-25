@@ -1,6 +1,27 @@
-// Генерация случайного числа
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+import greeting from '../src/cli.js';
+import readlineSync from 'readline-sync';
 
-export default getRandomNumber;
+const roundsCount = 3;
+
+function runEngine(rules, makeRound) {
+  const user = greeting();
+  console.log(rules);
+
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [question, correctAnswer] = makeRound();
+    console.log(`Question: ${question}`);
+    const playerAnswer = readlineSync.question('You answer: ');
+
+    if (correctAnswer === playerAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${user}`);
+      return;
+    }
+  }
+
+  console.log(`Congratulations, ${user}`);
+};
+
+export default runEngine;
