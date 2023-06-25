@@ -16,7 +16,7 @@ function runEngine(rules, makeRound) {
       console.log('Correct!');
     } else {
       console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${user}`);
+      console.log(`Let's try again, ${user}!`);
       return;
     }
   }
