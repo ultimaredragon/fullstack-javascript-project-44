@@ -17,7 +17,7 @@ function generateArithmeticProgression(length) {
   }
 
   return progression;
-};
+}
 
 function makeRound() {
   const progression = generateArithmeticProgression(lengthProgression);
@@ -28,6 +28,6 @@ function makeRound() {
   const question = progression.join(' ');
 
   return [question, correctAnswer];
-};
+}
 
 runEngine(rules, makeRound);

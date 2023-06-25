@@ -9,6 +9,6 @@ function makeRound() {
   const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
 
   return [question, correctAnswer];
-};
+}
 
 runEngine(rules, makeRound);

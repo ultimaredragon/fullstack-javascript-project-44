@@ -1,5 +1,5 @@
-import greeting from '../src/cli.js';
 import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
 const roundsCount = 3;
 
@@ -22,6 +22,6 @@ function runEngine(rules, makeRound) {
   }
 
   console.log(`Congratulations, ${user}`);
-};
+}
 
 export default runEngine;
