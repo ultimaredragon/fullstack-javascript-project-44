@@ -1,6 +1,5 @@
-#!/usr/bin/env node
 import runEngine from '../index.js';
-import getRandomNumber from '../rng.js';
+import getRandomNumber from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
@@ -22,4 +21,6 @@ function makeRound() {
   return [question, correctAnswer];
 }
 
-runEngine(rules, makeRound);
+export default () =>{
+  runEngine(rules, makeRound);
+}

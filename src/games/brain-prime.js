@@ -1,6 +1,5 @@
-#!/usr/bin/env node
 import runEngine from '../index.js';
-import getRandomNumber from '../rng.js';
+import getRandomNumber from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -25,4 +24,6 @@ function makeRound() {
   return [question, correctAnswer];
 }
 
-runEngine(rules, makeRound);
+export default () =>{
+  runEngine(rules, makeRound);
+}

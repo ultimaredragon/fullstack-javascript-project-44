@@ -1,26 +1,24 @@
-#!/usr/bin/env node
 import runEngine from '../index.js';
-import getRandomNumber from '../rng.js';
+import getRandomNumber from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
-const lengthProgression = getRandomNumber(5, 10);
 
 // Function for generating random ariphmetic progression
-function generateArithmeticProgression(length) {
-  const progression = [];
-  const start = getRandomNumber(10, 50); // Generate random number for begining
-  const difference = getRandomNumber(3, 7); // Generate difference in progression
+function generateArithmeticProgression(start, step, length) {
+  const progression = [];  
 
   for (let i = 0; i < length; i += 1) {
-    const number = start + i * difference;
-    progression.push(number);
+    progression.push(start + step * i);
   }
 
   return progression;
 }
 
 function makeRound() {
-  const progression = generateArithmeticProgression(lengthProgression);
+  const start = getRandomNumber(10, 50); // Generate random number for begining
+  const difference = getRandomNumber(3, 7); // Generate difference in progression
+  const lengthProgression = getRandomNumber(5, 10);
+  const progression = generateArithmeticProgression(start, difference, lengthProgression);
   const hiddenNumber = getRandomNumber(0, lengthProgression - 1);
 
   const correctAnswer = String(progression[hiddenNumber]);
@@ -30,4 +28,6 @@ function makeRound() {
   return [question, correctAnswer];
 }
 
-runEngine(rules, makeRound);
+export default () =>{
+  runEngine(rules, makeRound);
+}

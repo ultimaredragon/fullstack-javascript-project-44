@@ -10,7 +10,7 @@ function runEngine(rules, makeRound) {
   for (let i = 0; i < roundsCount; i += 1) {
     const [question, correctAnswer] = makeRound();
     console.log(`Question: ${question}`);
-    const playerAnswer = readlineSync.question('You answer: ');
+    const playerAnswer = readlineSync.question('Your answer: ');
 
     if (correctAnswer === playerAnswer) {
       console.log('Correct!');
