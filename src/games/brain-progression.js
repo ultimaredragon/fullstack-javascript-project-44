@@ -5,7 +5,7 @@ const rules = 'What number is missing in the progression?';
 
 // Function for generating random ariphmetic progression
 function generateArithmeticProgression(start, step, length) {
-  const progression = [];  
+  const progression = [];
 
   for (let i = 0; i < length; i += 1) {
     progression.push(start + step * i);
@@ -28,6 +28,6 @@ function makeRound() {
   return [question, correctAnswer];
 }
 
-export default () =>{
+export default () => {
   runEngine(rules, makeRound);
-}
+};

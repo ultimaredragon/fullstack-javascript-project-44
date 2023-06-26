@@ -21,6 +21,6 @@ function makeRound() {
   return [question, correctAnswer];
 }
 
-export default () =>{
+export default () => {
   runEngine(rules, makeRound);
-}
+};
