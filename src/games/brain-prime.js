@@ -3,7 +3,6 @@ import getRandomNumber from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-// Function for checking if the random number is prime
 function isPrime(number) {
   if (number < 2) {
     return false;

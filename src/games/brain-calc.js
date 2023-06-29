@@ -2,6 +2,7 @@ import runEngine from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const rules = 'What is the result of the expression?';
+
 const operators = ['+', '-', '*'];
 
 function getRandomOperator(operatorsMassive) {
@@ -11,7 +12,6 @@ function getRandomOperator(operatorsMassive) {
   return randomOperator;
 }
 
-// Switch for arifmetic operaion
 function calcOperation(operator, firstValue, secondValue) {
   switch (operator) {
     case '+':

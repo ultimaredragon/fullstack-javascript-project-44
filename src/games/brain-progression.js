@@ -3,7 +3,6 @@ import getRandomNumber from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
-// Function for generating random ariphmetic progression
 function generateArithmeticProgression(start, step, length) {
   const progression = [];
 

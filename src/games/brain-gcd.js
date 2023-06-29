@@ -3,7 +3,6 @@ import getRandomNumber from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
 
-// Function for finding greatest common divisior
 function gcd(a, b) {
   if (b === 0) {
     return a;
